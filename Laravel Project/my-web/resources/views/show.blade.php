@@ -1,5 +1,7 @@
 @extends('layout.base')
 
+@section('title', 'My Web')
+
 @section('content')
 <h1 class="page-header text-center">Employees List</h1>
 <div class="row">
@@ -24,8 +26,8 @@
                     <td>{{ $employees->lastname }}</td>
                     <td>{{ $employees->position }}</td>
                     <td>
-                        <a href="{{ url('/edit'.$employees->id) }}" class='btn btn-success' data-id=''>Edit</a>
-                        <a href="" class='btn btn-danger' data-id=''>Delete</a>
+                        <a href="{{ url('/edit'.$employees->id) }}" class='btn btn-success'>Edit</a>
+                        <a href="{{ url('/delete'.$employees->id) }}" class='btn btn-danger'>Delete</a>
                     </td>
                 </tr>
                 @endforeach
@@ -37,4 +39,3 @@
     </div>
 </div>
 @endsection
-
